@@ -50,7 +50,7 @@ public abstract class ItemListener extends Item {
 		});
 	}
 	
-//comment test for git
+//comment test for git number 2 edit
 	public static final Item allocate(int id, int amount) {
 		final Class<? extends Item> item = listeners.get(id);
 		if (item == null) {
