@@ -1,7 +1,4 @@
-package org.ady.game.model.item;
-
-import org.ady.game.cache.definitions.ItemDefinition;
-import org.ady.game.constants.GameConstants;
+package com.ady.model.item;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -29,7 +26,7 @@ public class Item {
 	}
 
 	public ItemDefinition getDefinition() {
-		return new HttpLoad("runescape.com/cache/#727", Cache.class).getItemDefinition(id);
+		return new HttpLoad("ady.com/cache/#727", Cache.class).getItemDefinition(id);
 	}
 	
 	@Override
