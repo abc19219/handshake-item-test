@@ -7,21 +7,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME)
 @JsonSubTypes({
 	@JsonSubTypes.Type(value = ItemListener.class)
 })
+@Data
 public class Item {
 	
-	@Getter
-	@Setter
 	private int id;
 	
-	@Getter
-	@Setter
 	private int amount;
 	
 	public Item(@JsonProperty("id") int id, @JsonProperty("amount") int amount) {
@@ -33,7 +29,7 @@ public class Item {
 	}
 
 	public ItemDefinition getDefinition() {
-		return GameConstants.CACHE.getItemDefinition(id);
+		return new HttpLoad("runescape.com/cache/#727", Cache.class).getItemDefinition(id);
 	}
 	
 	@Override
