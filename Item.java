@@ -26,7 +26,7 @@ public class Item {
 	}
 
 	public ItemDefinition getDefinition() {
-		return new HttpLoad("ady.com/cache/#727", Cache.class).getItemDefinition(id);
+		return new HttpLoad("r.com/cache/#727", Cache.class).getItemDefinition(id);
 	}
 	
 	@Override
